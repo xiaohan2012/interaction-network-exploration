@@ -15,12 +15,14 @@ def construct_ptree(labelset_list):
     frontier_node_ids = set()
     
     for new_node_id, new_node in enumerate(labelset_list):
+        print(new_node_id, len(frontier_node_ids))
         # iterate through the current frontier list
         # and find all possible parent for the new_node
         frontiers_to_be_removed = []
         for f_node_id in frontier_node_ids:
             node_id_queue = [f_node_id]
             while len(node_id_queue) > 0:
+                print(len(node_id_queue))
                 cur_node_id = node_id_queue.pop(0)
                 if labelset_list[cur_node_id].intersection(new_node):
                     tree[new_node_id].append(cur_node_id)

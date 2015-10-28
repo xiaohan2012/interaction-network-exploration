@@ -24,6 +24,7 @@ for a in db.articles.find():
             tag_freq[tag] += 1
 
 print('-' * 100)
+
 print("Top 100 companies ranked by frequency:")
 print('-' * 100)
 pprint(tag_freq.most_common(100))
