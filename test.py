@@ -11,7 +11,7 @@ def test_construct_ptree():
                      (A)]
     labelset_list = map(set, labelset_list)
     actual_tree = construct_ptree(labelset_list)
-    expected_tree = [[], [0], [0], [], [1, 2], [2]]
+    expected_tree = [[], [0], [0], [], [0, 1, 2], [0, 2]]
     # [(0, 1), (0, 2),
     #                   (1, 4), (2, 4), (2, 5)]
     assert_equal(actual_tree, expected_tree)
